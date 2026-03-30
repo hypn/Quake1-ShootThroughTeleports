@@ -381,6 +381,7 @@ void() teleport_touch =
 {
 local entity	t;
 local vector	org;
+local float	spd;
 
 	if (self.targetname)
 	{
@@ -394,6 +395,26 @@ local vector	org;
 	{
 		if (other.classname != "player")
 			return;
+	}
+
+// teleport rockets, grenades and nails
+	if (other.classname == "rocket" || other.classname == "grenade" || other.classname == "spike")
+	{
+		t = find (world, targetname, self.target);
+		if (!t)
+			return;
+
+		spawn_tfog (other.origin);
+
+		makevectors (t.mangle);
+		org = t.origin + 32 * v_forward;
+		spawn_tfog (org);
+
+		spd = vlen (other.velocity);
+		setorigin (other, t.origin);
+		other.velocity = v_forward * spd;
+		other.angles = vectoangles (other.velocity);
+		return;
 	}
 
 // only teleport living creatures

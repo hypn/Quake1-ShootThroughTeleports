@@ -410,8 +410,9 @@ void() W_FireRocket =
 	missile.velocity = missile.velocity * 1000;
 	missile.angles = vectoangles(missile.velocity);
 	
+	missile.classname = "rocket";
 	missile.touch = T_MissileTouch;
-	
+
 // set missile duration
 	missile.nextthink = time + 5;
 	missile.think = SUB_Remove;
