@@ -5,10 +5,10 @@ Allows larger weapons (nails, grenades and rockets) to be fired through teleport
 
 Demo: [https://imgur.com/a/7Tj97y0](https://imgur.com/a/7Tj97y0)
 
-**NOTE:** Does not work on Quake 1 Remastered, or for some teleporters (eg: on map DM4) :/
+**NOTE:** Does not work for some teleporters (eg: on map DM4) :/
 
 ## How to use it:
-Make a "ShootThroughTeleports" directory in your Quake1 directory, put the "PROGS.DAT" file in the directory, and launch the game with:
+Make a "ShootThroughTeleports" directory in your Quake1 directory (or in `Quake\rerelease` for Quake Enhanced), put the "PROGS.DAT" file in the directory, and launch the game with:
 ```
 quake.exe -game ShootThroughTeleports
 ```
